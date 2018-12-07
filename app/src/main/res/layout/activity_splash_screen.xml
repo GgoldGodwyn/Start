@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/off_white_background">
+
+    <include
+        android:id="@+id/tool_bar_pending"
+        layout="@layout/tool_bar">
+    </include>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/tool_bar_pending"
+        android:layout_above="@id/footer"
+        android:orientation="vertical">
+
+
+        <github.chenupt.springindicator.SpringIndicator
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:siTextSize="18sp"
+            app:siIndicatorColors="@array/indicator_colors"
+            app:siTextColor="@color/colorPrimaryDark"
+            app:siSelectedTextColor="@android:color/white"
+            app:siIndicatorColor="@color/colorPrimary"
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp" />
+
+        <com.app.fit.CustomViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="539dp"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:id="@+id/footer"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/status_indicator"
+            android:text="" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/icons8_connected_96"
+            android:id="@+id/status_connected"
+            android:visibility="gone"
+            android:layout_below="@+id/status_indicator"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/icons8_disconnected_96"
+            android:id="@+id/status_disconnected"
+            android:layout_below="@+id/status_indicator"
+            />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
